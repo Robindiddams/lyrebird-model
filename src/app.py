@@ -1,21 +1,18 @@
 from flask import Flask
 from flask import jsonify
 from flask_cors import CORS
-# import commands
-# import os
 import json
-import model.Main_Production.Create_Music as model
- 
+import LyreBird.Create_Music as model
+
 app = Flask(__name__)
 CORS(app)
- 
  
 @app.route("/")
 def runModel():
  
     model.generate()
     data={}
-    data["text"]=text
+    data["success"]=True
     return jsonify(data)
  
 if __name__ == "__main__":
