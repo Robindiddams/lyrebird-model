@@ -9,7 +9,6 @@ CORS(app)
  
 @app.route("/")
 def runModel():
- 
     model.generate()
     data={}
     data["success"]=True
